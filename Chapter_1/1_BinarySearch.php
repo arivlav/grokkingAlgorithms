@@ -1,20 +1,27 @@
 <?php
 
 function binarySearch(array $list, mixed $item): int|float|string|null {
+    //задаём изначальный диапазон поиска
     $low = 0;
     $high = count($list) - 1;
 
     while ($low <= $high) {
-        $mid = floor(($low + $high) / 2);
-        $guess = $list[$mid];
+        $mid = floor(($low + $high) / 2); //находим середину диапазона
+        $guess = $list[$mid]; //значение, которое находится в середине
 
+        /*
+         * если данное значение совпадает с искомым возвращаемего его
+         * т.е. алгоритм "отработал"
+        */
         if ($guess === $item) {
             return $mid;
         }
 
+        //если текущее срединное значение больше искомого в качестве нового диапазона поиска берем
+        //правую половину текущего диапазона
         if ($guess > $item) {
             $high = $mid - 1;
-        } else {
+        } else { //в противном случае - левую
             $low = $mid + 1;
         }
     }

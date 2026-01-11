@@ -8,7 +8,7 @@ function binarySearch(array $list, mixed $item): int|float|string|null {
         $mid = floor(($low + $high) / 2);
         $guess = $list[$mid];
 
-        if ($guess == $item) {
+        if ($guess === $item) {
             return $mid;
         }
 

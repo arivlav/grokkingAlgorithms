@@ -1,5 +1,7 @@
 <?php
 
+// сортировка выбором
+// сложность O(n^2)
 function selectionSort(array &$arr): void {
     $lastIndex = count($arr);
     // Внешний цикл для итерации по всем элементам
